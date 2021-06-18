@@ -152,7 +152,7 @@ public class BlocksMC1_17 implements BlockPropertiesSetup{
         }
 
         //Candle cakes
-        for (Material mat : MaterialUtil.CANDLE_CAKES) {
+        for (Material mat : MaterialUtil.COLORED_CAKES) {
             BlockFlags.addFlags(mat, BlockProperties.F_IGN_PASSABLE | BlockProperties.F_GROUND_HEIGHT);
             BlockProperties.setBlockProps(mat, new BlockProps(BlockProperties.noTool, 0.5f, BlockProperties.secToMs(0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75)));
         }

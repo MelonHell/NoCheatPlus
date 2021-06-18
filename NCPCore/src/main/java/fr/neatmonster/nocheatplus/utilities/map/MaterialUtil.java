@@ -202,16 +202,6 @@ public class MaterialUtil {
                     Arrays.asList("_copper"), AlmostBoolean.YES)
             );
 
-    public static final Set<Material> CANDELS = Collections.unmodifiableSet(
-            BridgeMaterial.getBySuffix("candle", AlmostBoolean.YES, "legacy")
-            );
-
-    public static final Set<Material> COPPER_BLOCKS = Collections.unmodifiableSet(
-            BridgeMaterial.getByPrefixAndSuffix(
-                    Arrays.asList("copper_"),
-                    Arrays.asList("_copper"), AlmostBoolean.YES)
-            );
-
     public static final Set<Material> CARPETS = Collections.unmodifiableSet(addBlocks(
             BridgeMaterial.getBySuffix("_carpet", AlmostBoolean.YES, "legacy"), 
             "carpet"));
