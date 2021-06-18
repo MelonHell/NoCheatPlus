@@ -72,14 +72,14 @@ public class ReflectBlockSix implements IReflectBlock {
 
     public ReflectBlockSix(ReflectBase base, ReflectBlockPosition reflectBlockPosition) throws ClassNotFoundException {
         this.reflectBlockPosition = reflectBlockPosition;
-        final Class<?> clazz = Class.forName(base.nmsPackageName + ".Block");
+        final Class<?> clazz = Class.forName("net.minecraft.world.level.block" + ".Block");
         // byID (static)
         nmsGetById = ReflectionUtil.getMethod(clazz, "getById", int.class);
         // getMaterial
         nmsGetMaterial = ReflectionUtil.getMethodNoArgs(clazz, "getMaterial");
         // updateShape
         Method method = null;
-        Class<?> clazzIBlockAccess = Class.forName(base.nmsPackageName + ".IBlockAccess");
+        Class<?> clazzIBlockAccess = Class.forName("net.minecraft.world.level" + ".IBlockAccess");
         if (reflectBlockPosition != null) {
             method = ReflectionUtil.getMethod(clazz, "updateShape", clazzIBlockAccess, reflectBlockPosition.nmsClass);
         }

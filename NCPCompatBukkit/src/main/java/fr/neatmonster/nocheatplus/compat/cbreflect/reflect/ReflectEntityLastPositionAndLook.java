@@ -43,7 +43,7 @@ public class ReflectEntityLastPositionAndLook extends ReflectGetHandleBase<Entit
     }
 
     public ReflectEntityLastPositionAndLook(ReflectBase base) throws ClassNotFoundException {
-        this(base, Class.forName(base.obcPackageName + ".entity.CraftEntity"), Class.forName(base.nmsPackageName + ".Entity"));
+        this(base, Class.forName(base.obcPackageName + ".entity.CraftEntity"), Class.forName("net.minecraft.world.entity" + ".Entity"));
     }
 
     public ReflectEntityLastPositionAndLook(ReflectBase base, Class<?> obcClass, Class<?> nmsClass) throws ClassNotFoundException, NoSuchFieldError {

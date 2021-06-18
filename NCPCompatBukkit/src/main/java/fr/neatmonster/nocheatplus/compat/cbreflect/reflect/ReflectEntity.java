@@ -46,7 +46,7 @@ public class ReflectEntity extends ReflectGetHandleBase<Entity> {
     public final boolean nmsDamageEntityInt;
 
     public ReflectEntity(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource) throws ClassNotFoundException {
-        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftEntity"), Class.forName(base.nmsPackageName + ".Entity"));
+        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftEntity"), Class.forName("net.minecraft.world.entity" + ".Entity"));
     }
 
     public ReflectEntity(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource, Class<?> obcClass, Class<?> nmsClass) throws ClassNotFoundException {

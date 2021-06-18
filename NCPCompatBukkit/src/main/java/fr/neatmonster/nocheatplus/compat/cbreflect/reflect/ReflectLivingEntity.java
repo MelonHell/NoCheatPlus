@@ -23,7 +23,7 @@ public class ReflectLivingEntity extends ReflectEntity {
     public final Method nmsGetHealth;
 
     public ReflectLivingEntity(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource) throws ClassNotFoundException {
-        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftLivingEntity"), Class.forName(base.nmsPackageName + ".EntityLiving"));
+        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftLivingEntity"), Class.forName("net.minecraft.world.entity" + ".EntityLiving"));
     }
 
     public ReflectLivingEntity(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource, Class<?> obcClass, Class<?> nmsClass) throws ClassNotFoundException {

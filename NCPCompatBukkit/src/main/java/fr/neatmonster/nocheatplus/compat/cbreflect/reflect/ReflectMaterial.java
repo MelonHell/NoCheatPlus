@@ -26,7 +26,7 @@ public class ReflectMaterial {
     public final Method nmsIsSolid;
 
     public ReflectMaterial(ReflectBase base) throws ClassNotFoundException {
-        nmsClass = Class.forName(base.nmsPackageName + ".Material");
+        nmsClass = Class.forName("net.minecraft.world.level.material" + ".Material");
         nmsIsLiquid = ReflectionUtil.getMethodNoArgs(nmsClass, "isLiquid", boolean.class);
         nmsIsSolid = ReflectionUtil.getMethodNoArgs(nmsClass, "isSolid", boolean.class);
     }
