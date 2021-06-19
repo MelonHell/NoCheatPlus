@@ -97,16 +97,16 @@ public class BlocksMC1_17 implements BlockPropertiesSetup{
         BlockInit.setPropsAs("WEATHERED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
         BlockInit.setPropsAs("OXIDIZED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
 
-        // Waxxed Copper stairs
-        BlockInit.setPropsAs("WAXXED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_EXPOSED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_WEATHERED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_OXIDIZED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
-        // Waxxed Copper slabs
-        BlockInit.setPropsAs("WAXXED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_EXPOSED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_WEATHERED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
-        BlockInit.setPropsAs("WAXXED_OXIDIZED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
+        // Waxed Copper stairs
+        BlockInit.setPropsAs("WAXED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_EXPOSED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_WEATHERED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_OXIDIZED_CUT_COPPER_STAIRS", Material.COPPER_BLOCK);
+        // Waxed Copper slabs
+        BlockInit.setPropsAs("WAXED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_EXPOSED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_WEATHERED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
+        BlockInit.setPropsAs("WAXED_OXIDIZED_CUT_COPPER_SLAB", Material.COPPER_BLOCK);
 
         // Flower stuffAzalea
         // (flowering_)azalea leaves should be automated in MaterialUtil
