@@ -25,7 +25,13 @@ public class ReflectBlockPosition {
     public final Constructor<?> new_nmsBlockPosition;
 
     public ReflectBlockPosition(ReflectBase base) throws ClassNotFoundException {
-        nmsClass = Class.forName("net.minecraft.core" + ".BlockPosition");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".BlockPosition");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.core" + ".BlockPosition");
+        }
+        this.nmsClass = nmsClass;
         new_nmsBlockPosition = ReflectionUtil.getConstructor(nmsClass, int.class, int.class, int.class);
     }
 

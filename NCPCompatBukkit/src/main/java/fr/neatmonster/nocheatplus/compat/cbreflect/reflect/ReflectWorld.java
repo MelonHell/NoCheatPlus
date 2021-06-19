@@ -41,7 +41,11 @@ public class ReflectWorld {
         Class<?> nmsClass = null;
         try {
             reflectIBlockData = new ReflectIBlockData(base, reflectMaterial);
-            nmsClass = Class.forName("net.minecraft.world.level" + ".World");
+            try {
+                nmsClass = Class.forName(base.nmsPackageName + ".World");
+            } catch (ClassNotFoundException e) {
+                nmsClass = Class.forName("net.minecraft.world.level" + ".World");
+            }
         }
         catch (Throwable t) {};
         this.nmsClass = nmsClass;

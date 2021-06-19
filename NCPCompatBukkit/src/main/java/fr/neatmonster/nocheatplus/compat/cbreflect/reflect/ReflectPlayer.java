@@ -27,8 +27,16 @@ public class ReflectPlayer extends ReflectLivingEntity {
 
     public final Method nmsGetAttributeInstance; // TODO: LivingEntity
 
+    private static Class<?> getNmsClass(ReflectBase base) throws ClassNotFoundException {
+        try {
+            return Class.forName(base.nmsPackageName + ".EntityPlayer");
+        } catch (ClassNotFoundException e) {
+            return Class.forName("net.minecraft.server.level" + ".EntityPlayer");
+        }
+    }
+
     public ReflectPlayer(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource) throws ClassNotFoundException {
-        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftPlayer"), Class.forName("net.minecraft.server.level" + ".EntityPlayer"));
+        this(base, reflectAxisAlignedBB, damageSource, Class.forName(base.obcPackageName + ".entity.CraftPlayer"), getNmsClass(base));
     }
 
     public ReflectPlayer(ReflectBase base, ReflectAxisAlignedBB reflectAxisAlignedBB, ReflectDamageSource damageSource, Class<?> obcClass, Class<?> nmsClass) throws ClassNotFoundException {
@@ -41,7 +49,7 @@ public class ReflectPlayer extends ReflectLivingEntity {
         Method method;
         try {
             Class<?> clazzIAttribute = Class.forName(base.nmsPackageName + ".IAttribute");
-            method = ReflectionUtil.getMethod(nmsClass, "getAttributeInstance", clazzIAttribute); 
+            method = ReflectionUtil.getMethod(nmsClass, "getAttributeInstance", clazzIAttribute);
         } catch (ClassNotFoundException e) {
             method = null;
         }

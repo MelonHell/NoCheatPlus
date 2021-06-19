@@ -45,7 +45,13 @@ public class ReflectAxisAlignedBB {
      *             if not available.
      */
     public ReflectAxisAlignedBB(ReflectBase base) throws ClassNotFoundException {
-        nmsClass = Class.forName(base.nmsPackageName + ".AxisAlignedBB");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".AxisAlignedBB");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.world.phys" + ".AxisAlignedBB");
+        }
+        this.nmsClass = nmsClass;
         nms_minX = ReflectionUtil.getField(nmsClass, "a", double.class);
         nms_minY = ReflectionUtil.getField(nmsClass, "b", double.class);
         nms_minZ = ReflectionUtil.getField(nmsClass, "c", double.class);

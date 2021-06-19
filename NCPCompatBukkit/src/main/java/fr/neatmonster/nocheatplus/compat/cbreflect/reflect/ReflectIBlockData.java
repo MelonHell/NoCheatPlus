@@ -41,7 +41,13 @@ public class ReflectIBlockData {
      *             If not available.
      */
     public ReflectIBlockData(ReflectBase base, ReflectMaterial reflectMaterial) throws ClassNotFoundException {
-        nmsClass = Class.forName(base.nmsPackageName + ".IBlockData");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".IBlockData");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.world.level.block.state" + ".IBlockData");
+        }
+        this.nmsClass = nmsClass;
         nmsGetMaterial = ReflectionUtil.getMethodNoArgs(nmsClass, "getMaterial", reflectMaterial.nmsClass);
         if (nmsGetMaterial == null) {
             throw new ReflectFailureException();

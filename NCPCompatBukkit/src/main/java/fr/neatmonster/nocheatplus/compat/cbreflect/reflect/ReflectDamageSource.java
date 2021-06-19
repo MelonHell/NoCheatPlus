@@ -25,7 +25,12 @@ public class ReflectDamageSource {
     public final Object nmsFALL;
 
     public ReflectDamageSource(ReflectBase base) throws ClassNotFoundException {
-        Class<?> nmsClass = Class.forName("net.minecraft.world.damagesource" + ".DamageSource");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".DamageSource");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.world.damagesource" + ".DamageSource");
+        }
         this.nmsClass = nmsClass;
         Field field = ReflectionUtil.getField(nmsClass, "FALL", nmsClass);
         nmsFALL = field == null ? null : ReflectionUtil.get(field, nmsClass, null);

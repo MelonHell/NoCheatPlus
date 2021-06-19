@@ -19,7 +19,13 @@ public class ReflectIBlockAccess {
     public final Class<?> nmsClass;
 
     public ReflectIBlockAccess(ReflectBase base) throws ClassNotFoundException {
-        nmsClass = Class.forName("net.minecraft.world.level" + ".IBlockAccess");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".IBlockAccess");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.world.level" + ".IBlockAccess");
+        }
+        this.nmsClass = nmsClass;
     }
 
 }

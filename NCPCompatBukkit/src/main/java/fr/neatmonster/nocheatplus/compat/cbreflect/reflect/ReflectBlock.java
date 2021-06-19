@@ -70,7 +70,13 @@ public class ReflectBlock implements IReflectBlock {
         }
         this.reflectIBlockAccess = new ReflectIBlockAccess(base);
         // Block.
-        nmsClass = Class.forName(base.nmsPackageName + ".Block");
+        Class<?> nmsClass;
+        try {
+            nmsClass = Class.forName(base.nmsPackageName + ".Block");
+        } catch (ClassNotFoundException e) {
+            nmsClass = Class.forName("net.minecraft.world.level.block" + ".Block");
+        }
+        this.nmsClass = nmsClass;
         // byID (static)
         nmsGetById = ReflectionUtil.getMethod(nmsClass, "getById", int.class);
         if (nmsGetById == null) {
