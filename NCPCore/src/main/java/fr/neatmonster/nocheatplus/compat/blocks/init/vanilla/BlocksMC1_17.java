@@ -146,7 +146,7 @@ public class BlocksMC1_17 implements BlockPropertiesSetup{
         BlockProperties.setBlockProps("AMETHYST_BLOCK", new BlockProperties.BlockProps(BlockProperties.woodPickaxe, 1.5f, BlockProperties.secToMs(2.25, 1.15, 0.6, 0.4, 0.3, 0.25, 0.2)));
 
         //Candles - So sea pickles with mining times of carpet
-        for (Material mat : MaterialUtil.CANDELS) {
+        for (Material mat : MaterialUtil.CANDLES) {
             BlockInit.setPropsAs("CANDLE", Material.SEA_PICKLE);
             BlockProperties.setBlockProps(mat, new BlockProps(BlockProperties.noTool, 0.1f, BlockProperties.secToMs(0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15)));
         }

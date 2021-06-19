@@ -192,7 +192,7 @@ public class MaterialUtil {
     public static final Set<Material> COLORED_CAKES = Collections.unmodifiableSet(
             BridgeMaterial.getBySuffix("_cake", AlmostBoolean.YES, "legacy"));
 
-    public static final Set<Material> CANDELS = Collections.unmodifiableSet(
+    public static final Set<Material> CANDLES = Collections.unmodifiableSet(
             BridgeMaterial.getBySuffix("candle", AlmostBoolean.YES, "legacy")
             );
 
