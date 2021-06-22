@@ -189,7 +189,7 @@ public class MaterialUtil {
         BOATS = Collections.unmodifiableSet(temp);
     }
 
-    public static final Set<Material> COLORED_CAKES = Collections.unmodifiableSet(
+    public static final Set<Material> CANDLE_CAKES = Collections.unmodifiableSet(
             BridgeMaterial.getBySuffix("_cake", AlmostBoolean.YES, "legacy"));
 
     public static final Set<Material> CANDLES = Collections.unmodifiableSet(
